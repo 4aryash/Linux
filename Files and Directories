@@ -1,2 +1,4 @@
-mkdir xyz -> Create a directory.
-touch xyz -> Create a file.
+mkdir xyzFilename -> Create a directory.
+touch xyzFilename -> Create a file.
+
+echo "Hello World. This is the text." > xyzFilename
