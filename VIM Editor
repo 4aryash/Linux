@@ -1,0 +1,8 @@
+Press Esc +
+  :wq -> Write/save the file and Quit
+  :q! -> Quit without saving
+  :q  ->
+  :qa -> Close all open editor files.
+(Hit enter to execute the command.)
+
+Insert +
