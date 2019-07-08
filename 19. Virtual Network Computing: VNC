@@ -1,0 +1,52 @@
+Notes:-
+  These are the steps you need to follow to establish a VNC between a server(friend's system) and a client(your system).
+  VNC-> Graphical && SSH-> Non graphical.
+  VNC is done on a local network, similar to SSH.
+  If connection is to be established on a non-local network, softwares like TeamViewer are good to go.
+  PS: Anything after "#" is a command. Anything after "//" is a comment.
+
+The default service port number of vnc is 5900+N,
+where N is the number of nodes/network.
+
+
+
+*****Commands to be executed on the server side/friend's system.*****
+
+#yum install tigervnc tigervnc-server                               //command for rhel
+#sudo apt-get install tigervnc-standalone-server tigervnc-viewer    //command for debian
+
+#cat /etc/sysconfig/vncservers  //default config file location
+
+#cp vncserver@.service /etc/systemd/system/vncserver_student@:1.service
+  //name of the original file changed and port number set to 1.
+  //Create a copy of this original config file to another location, as we are setting up the vncserver for a single user.
+  //We will be required to setup for many users, so the original file will be used.
+
+#cd /newLocation
+#vim vncservers
+    //read the instructions and change the username to your user XYZ or root user, based on which one you want to give to the client(friend).
+    //save and quit the vim editor
+
+#systemctl enable vncserver_student@:1.service    //enabling the vnc service
+
+#su user XYZ    //switching user to the given sudo apt-get install tigervnc-standalone-server tigervnc-vieweruser, to set a vnc password required by the client.
+#vncpasswd
+#logout
+
+#systemctl daemon-reload    //refreshing the processes
+
+#systemctl restart vncserver_student@:1.service
+
+#firewall-cmd --permanent --add-service=vnc.server    //giving access of vnc server to the firewall
+#firewall-cmd --reload
+#firewall-cmd --list-all    //optional command. Shows all services allowed by the firewall.
+
+
+
+*****Commands to be executed on the client side/your system.*****
+
+#yum install tigervnc   //for rhel
+#vncviewer
+  //now, give the server ip or the username that was set.
+  //example- 192.168.43.54:1, where 1 is the port number set.
+
