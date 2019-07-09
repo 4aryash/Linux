@@ -49,4 +49,3 @@ where N is the number of nodes/network.
 #vncviewer
   //now, give the server ip or the username that was set.
   //example- 192.168.43.54:1, where 1 is the port number set.
-
