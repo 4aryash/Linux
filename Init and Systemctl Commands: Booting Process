@@ -1,0 +1,20 @@
+RHEL 6 has 7 run levels(0-6), which uses INIT commands.
+The difference between INIT and SYSTEMCTL commands lies in their syntax.
+
+Commands for the Booting process:
+
+# init 0 -> Poweroff
+# init 1 -> Single user mode
+# init 2 -> Multi-user mode without NFS(Network File System), thus cant share files from network
+# init 3 -> Multi-user mode with NFS, thus can share files from the network
+# init 4 -> unused mode as of now. No program assigned
+# init 5 -> Graphical User mode
+# init 6 -> Reboot
+
+  OR
+
+# systemctl poweroff  //poweroff or hibernate or reboot, can be used
+# systemctl get-default  //To determine which target unit is used by default, run the following command: 
+# systemctl isolate emergency.target  //Changes the current target
+# systemctl set-default/isolate multi-user.target //booting into a multi-user target
+# systemctl set-default/isolate graphical.target  //booting into a graphical target
