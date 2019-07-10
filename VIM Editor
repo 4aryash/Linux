@@ -3,6 +3,26 @@ Press Esc +
   :q! -> Quit without saving
   :q  ->
   :qa -> Close all open editor files.
-(Hit enter to execute the command.)
+  (Hit enter to execute these command.)
+  
+  o       ->  Creates a new line below the cursor
+  shift+o ->  Creates a new line above the cursor
+  shift+G ->  Cursor goes to the End of file
+  shift+H ->  Cursor goes to the Head of file
+  shift+a ->  Cursor goes to the End of line
+  shift+b ->  Cursor goes to the Start of line
+  yy      ->  Copies/yanks the entire line
+  p       ->  Pastes the copied line below the cursor
+  P       ->  Pastes the copied line above the cursor
+  5+YY    ->  Copies 5 lines/yanks
+  dd      ->  Deletes/cuts a line
+  5+dd    ->  Deletes/cuts 5 lines
+  u       ->  Undo
+  ctrl+r  ->  Redo
+  :set number ->  Numbering is brought to the lines
+  :set nonumber ->  Removes numbering
+  /xyz    ->  Searches xyz in file just like grep
+  :%/s/hi/hello/g ->  Find and replace, where s is substitute and g is global context
+  :wq /shift+zz ->  write and quit
+  :q! /shift+zq ->  Just exit without writing
 
-Insert +
