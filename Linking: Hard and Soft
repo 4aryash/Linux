@@ -1,4 +1,25 @@
 Links of existing Files and Directories can be created using two methods of HARD-LINK and SOFT-LINK.
 Linking is similar to creating a shortcut of an application, for faster access, just like in windows.
 
+Hard Link:
+  *Creates links of only files and not directories.
+  *Inode ID of a file and its link is same.
+  *Cant create link in between partitions.
+  *If the source file gets corrupted, the link file will not be affected and vice versa.
+Soft Link:
+  *Creates links of both files and directories.
+  *Inode ID for a source and link files are different.
+  *Can create links through different partitions or file systems.
+  *If the source file gets corrupted, the link file will also be affected and vice versa.
+  
 Commands:
+  #ln xyzFilename hardl   //creates a hardlinked file
+  #ln -s xyzFilename softl  //creates a softlinked file
+  
+  #ln xyzDirname hardl    //creates an error. Can't hardlink a directory
+  #ln -s xyzDirname softl //creates a softlinked dir
+  
+  #ls -i    //inode value of any file/dir
+  
+  #unlink hardl   //automatically removes link
+  #unlink softl   
