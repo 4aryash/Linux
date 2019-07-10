@@ -1,4 +1,16 @@
-mkdir xyzFilename -> Create a directory.
-touch xyzFilename -> Create a file.
+Notes:
+  xyz is a random name of any file or dir.
+  Comments are written after 
 
-echo "Hello World. This is the text." > xyzFilename
+Basic:
+mkdir xyz -> Makes a directory.
+touch xyz -> Creates a file.
+
+
+mkdir /root/xyz         //makes a xyz directory in root folder
+mkdir /root/"xyz 1"     //filename has spacing, otherwise if " " is not mentioned, two seperate dirs xyz and 1 will be created.
+mkdir /root/xyz{2..4}   //xyz2 xyz3 xyz4 directiories are created
+
+touch /root/xyz         //makes a xyz file in root folder
+touch /root/"xyz 1"     //filename has spacing, otherwise if " " is not mentioned, two seperate files xyz and 1 will be created.
+touch /root/xyz{2..4}   //xyz2 xyz3 xyz4 files are created
