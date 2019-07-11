@@ -1,0 +1,29 @@
+//Commands managing all the processes in linux
+
+#ps     ->  Shows the running processes at a particular time, of the current terminal. Stands for Process State. 
+
+#ps -a  ->  Shows all the processes running at a particular time, across all the terminals.
+
+#ps -au ->  Shows all the processes along with their usernames, running at a particular time, across all the terminals.
+
+#top    ->  Shows all the process along with their usernames, along with the dynamic time ie.. Process is updated every second.
+
+#nice -20 firefox ->  Sets the priority of the process of Firefox to minumux(max is 19, min is -20).
+
+#renice -n 19 2382  -> removing the priority of the process having PID 2382.
+
+#jobs   ->  Shows all the processes that are stopped at the current time.
+
+#bg 1   ->  Shifts a process to the background.
+
+#fg 1   ->  Shifts a process to the foreground.
+
+#pstree ->  Shows all the processes and subprocesses starting from the systemctl/init.
+
+#firefox &  ->  Runs any foreground process in the background right from the starting.
+
+#pkill ping ->  Kills a process named ping.
+
+#kill -9 2727 ->   just kills any process having a process id 2727
+
+#kill 2727  ->  Terminates the process having process id 2727.
