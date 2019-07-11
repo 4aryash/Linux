@@ -1,0 +1,32 @@
+# -> root user
+$ -> other user
+
+For RHEL, commands are as follows,
+
+1)  In the Grub menu, select the kernel and press edit. The various kernels can be differentiated on the basis of their os names.
+
+2)  When a command line interface opens up, scroll down to the "linuxX16" paragraph, and press the End key on the keyboard.
+
+3)  Write the command at the end of the line.
+    Command:  rd.break console=tty1
+
+4)  Now, press ctrl+x and exit the command line interface.
+
+5)  Now we must get the read and write permissions in the kernel, so that we can make changes in the shell.
+    Command: #mount -o remount,rw /sysroot
+
+6)  Now we must switch the shell by the command,
+    Command: #chroot /sysroot
+
+7)  Now the command line will switch to, we can now change the password from here
+    sh-4.2# passwd
+    
+    New passwd: xyzRandomPassword123
+    retype: xyzRandomPassword123      //click enter to set the passwd
+
+8)  Command: sh-4.2# touch /.autorelabel
+    This converts back the permissions to read only after restarting, and the permissions are set to the default SELinux policies.
+    
+9)  #exit   //exit the cmd line interface
+
+10) #exit   //exit the grub
