@@ -1,0 +1,18 @@
+#whoami   ->    shows the current user logged in.
+#who -a   ->    What process have occured since the starting of pc.
+#cal -1   ->    Calender of the current month.
+#cal -3   ->    Calender of prev.month, current month, next month.
+#cal 2019   ->    Calender of the entire year.
+#cal 02 1999  ->    Calender of February 1999
+#bc       ->    Basic Calculator
+#bc <<< 6*2   ->    Single operation is performed
+#echo 6*2 | bc->    Calculation is performed and printed
+
+#cd -     ->    Change directory to previous
+#cd ..    ->    Change directory to parent directory
+#cd .     ->    Change directory to same directory.
+
+#ls       ->    List files in ascending order.
+#ls -r    ->    List files in descending order.
+#ls -a    ->    Lists all the files including hidden files.
+#ls -ll   ->    Lists all files along with their properties.
