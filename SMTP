@@ -27,9 +27,19 @@ Commands:
       myorigin    = $myhostname   //if this command is given, the client gets to know which system in the domain has sent the mail.
       #myorigin   = $mydomain   //here, the client will not know which system has sent the mail. Only domain is specified.
       
-      inet_interfaces = all   //interacts with all the machines
-      #inet_interfaces= $myhostname
-      #inet_interfaces= $myhostname,localhost
-      #inet_interfaces= localhost
+      inet_interfaces = all   //interacts and listens on all interfaces
+      #inet_interfaces= $myhostname   //listens on only the host
+      #inet_interfaces= $myhostname,localhost   //listens on both host machine and the homenetwork
+      #inet_interfaces= localhost   //listens on only home network
+      
+      mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain, mail.$mydomain, ftp.$mydomain, www.$mydomain
+          //can send and receive mails through these servers
+      
+      relayhost = [desktop7.example.com]
+        //The id through which the mail is going to be sent
+        //Relayhost is a seperate gateway which acts as a path
+        //Gateway can be the same system but relayhost is a seperate system acting like a gateway/path.
+        
+      
       
       
