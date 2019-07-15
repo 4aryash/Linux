@@ -1,0 +1,15 @@
+SMTP
+  Simple Mail Transfer Protocol
+
+Port No is 25.
+Port No of IMAP(Internet Message Access Protocol) is 143.
+Port No of POP3(Post Office Protocol v3) is 110.
+
+Postfix is the application used to configure SMTP, for sending and receiving mails(without attachments).
+
+When any mail is sent, it follows 4 basic steps,
+    i) Mail User Agents(MUA)-   Mail is sent from Client(You.gmail) to server(Gmail, Yahoo, etc).
+    ii) Mail Submission Agents(MSA)-    Mail is sent from the Server1(Gmail) to Server2(Gmail/Yahoo).
+    iii) Mail Transmission Agents(MTA)- Mail is sent from the Server2(Yahoo) to Client(xyz.yahoo).
+    iv) Mail Delivery Agents(MDA)
+
