@@ -40,6 +40,11 @@ Commands:
         //Relayhost is a seperate gateway which acts as a path
         //Gateway can be the same system but relayhost is a seperate system acting like a gateway/path.
         
+      :wq   //save and exit the conf file.
+      
+  b) Restart the service.
+    #systemctl restart postfix.service
+        
       
       
       
