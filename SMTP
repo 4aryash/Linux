@@ -1,15 +1,35 @@
 SMTP
   Simple Mail Transfer Protocol
 
-Port No is 25.
-Port No of IMAP(Internet Message Access Protocol) is 143.
-Port No of POP3(Post Office Protocol v3) is 110.
+Notes:
+  All the commands are for rhel. For debian and other operating systems, only few of the commands syntaxes are different.
+  Port No is 25.
+  Port No of IMAP(Internet Message Access Protocol) is 143.
+  Port No of POP3(Post Office Protocol v3) is 110.
+  Commands are writted after #; Comments of commands are written after //; Comments inside vim editor are written after #.
 
 Postfix is the application used to configure SMTP, for sending and receiving mails(without attachments).
 
 When any mail is sent, it follows 4 basic steps,
-    i) Mail User Agents(MUA)-   Mail is sent from Client(You.gmail) to server(Gmail, Yahoo, etc).
-    ii) Mail Submission Agents(MSA)-    Mail is sent from the Server1(Gmail) to Server2(Gmail/Yahoo).
-    iii) Mail Transmission Agents(MTA)- Mail is sent from the Server2(Yahoo) to Client(xyz.yahoo).
-    iv) Mail Delivery Agents(MDA)
+    i) Mail User Agents(MUA)-   User(you) interacts with the application that is sending/receiving the mail.
+    ii) Mail Submission Agents(MSA)-    Mail is sent from Client(You.gmail) to server(Gmail, Yahoo, etc).
+    iii) Mail Transmission Agents(MTA)-   Mail is sent from the Server1(Gmail) to Server2(Gmail/Yahoo).
+    iv) Mail Delivery Agents(MDA)-    Mail is sent from the Server2(Yahoo) to Client(xyz.yahoo).
 
+Commands:
+  a)Configure postfix in server pc(your pc)-
+    #yum install postfix    //install postfix pkg in the system
+    #vim /etc/postfix/main.cf   //configuration file for postfix
+    
+      myhostname  = yourServername.domainName.com
+      mydomain    = domain.com
+      
+      myorigin    = $myhostname   //if this command is given, the client gets to know which system in the domain has sent the mail.
+      #myorigin   = $mydomain   //here, the client will not know which system has sent the mail. Only domain is specified.
+      
+      inet_interfaces = all   //interacts with all the machines
+      #inet_interfaces= $myhostname
+      #inet_interfaces= $myhostname,localhost
+      #inet_interfaces= localhost
+      
+      
