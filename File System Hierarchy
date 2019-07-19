@@ -1,0 +1,21 @@
+Inbuilt Directories and their contents, explained.
+
+/bin    -  All the executed commands are stored.
+/boot   -  All the bootable files are present.
+/dev    -  All the information about the storage devices.
+/etc    -  All the configuration files of system and applications.
+/home   -  It is the home directory of all users - root.
+/lib    -  All 32bit library files.
+/lib64  -  All 64bit library files.
+/media  -  All information of external devices mounting point.
+/mnt    -  It is the default mounting point of all devices.
+/opt    -  It is an Optional Drive for large data files.
+/proc   -  All the permanent processes information will be stored, like Daemon process-Bg processes.
+/root   -  It is the home directory of the system users.
+/run    -  All the temporary process stored here, like Firefox,etc.
+/sbin   -  All sensitive commands like init and systemctl, that can change the total environment of th system.
+/sys    -  All system information like the NIC, processor, motherboard.
+/tmp    -  All temp and cache files of the sessions are stored here. All users can access this directory.
+/usr    -  It is the main directory that is linked to all other directories.
+/var    -  All variable files are located like log entries and sender/receipent address, errors, etc.
+/srv    -  It is a synchronize variable. Like when /var overloads, all the files are automatically swapped with /srv
