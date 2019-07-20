@@ -44,7 +44,3 @@ Commands:
       
   b) Restart the service.
     #systemctl restart postfix.service
-        
-      
-      
-      
