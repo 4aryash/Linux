@@ -1,0 +1,14 @@
+Here are some keywords which make your Google Searches concise and avoid overloading of vague results.
+Below, are the commands with their example.
+
+1)  site:domainName keyword1  //searches for the keyword1 only in the respective domainName, and returns result of the same.
+  Ex- site:dsu.edu pat engebretson  //searches for pat engebretson in dsu.edu website and only returns the result of dsu.edu sites.
+
+2)  intitle:keyword1 keyword2   //returns results of websites containing the keyword1 only.
+  Ex- intitle:index of    //searches for all the websites containing the keyword index.
+  
+3)  allintitle:keyword1 keyword2    //returns results of websites containing all the mentioned Keywords.
+  Ex- allintitle:index of     //returns results of all websites containing index of keywords.
+  
+4)  inurl:keyword1   //returns all the websites containing the keyword1 in their url.
+  Ex- inurl:admin   //returns all the websites containing the keyword admin in their url.
