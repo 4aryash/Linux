@@ -1,0 +1,33 @@
+MariaDB is a Database Management System which is 2x faster and stores more amounts of data, than MYSQL.
+•Port No: 3306
+
+•Setting up MariaDB:
+  #yum group install mariadb    or    #apt-get install mariadb-server
+  #systemctl enable mariadb.service
+  #systemctl restart mariadb.service
+  #netstat -tulnp | grep sql      //checks all the listening ports
+  #vi /etc/my.cnf                 //block a port that is listening
+    skip networking = 1           //type this inside the cnf file
+  #systemctl restart mariadb.service
+  #mysql                          //here, DBMS will be opened. But, any user can access this, so we must make it secure.
+
+
+•Securing the Database:
+  #mysql_secure_installation      //it will secure with a password
+  Now set the password and then press enter or Y, till it finishes setting up.
+  #mysql -u root -p               //this is a secure way to enter into the database
+
+•MariaDB:
+  MariaDb > show databases;       //shows all the existing databases
+  MariaDb > use mysql;            //goes into the mysql database
+  MariaDb[mysql] > show tables;    //Databases are like folders and tables are like files.
+  MariaDb[mysql] > select * from user;    //selects any table user
+  MariaDb[mysql] > create user xyz@localhost identified by "12345";   //this is how a local user is set.
+  MariaDb[mysql] > create user abc@'%' identified by "12345";         //% is used to set a remote user
+  MariaDb[mysql] > create database data1;   
+  MariaDb[mysql] > use data1              //enter into database data1
+  MariaDb[data1] > create table table1(user varchar(20), id int(10));   //create a table with two coloumns.
+  MariaDb[data1] > desc table1;     //displays the table
+  
+
+ 
