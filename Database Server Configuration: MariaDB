@@ -1,0 +1,7 @@
+MariaDB is a Database Management System which is 2x faster and stores more amounts of data, than MYSQL.
+Port No: 3306
+
+Setting up MariaDB:
+  #yum group install mariadb    or    #apt-get install mariadb-server
+  #systemctl enable mariadb.service
+  #systemctl restart mariadb.service
