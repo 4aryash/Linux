@@ -51,5 +51,11 @@ MariaDB is a Database Management System which is 2x faster and stores more amoun
   [data1]> exit
   
 •Taking Backup of the Database:
+  #mysqldump -u root -p data1 > backup    //safe backup to the present working directory
+  #mysql  -u root -p
+  MariaDb> Create database randomDatabaseName;
+  MariaDb> use randomDatabaseName;
+  [randomDatabaseName]> show table;     //shows nothing as there is nothing in the databse
+  [randomDatabaseName]> exit
   
-  
+  #mysql -u root -p randomDatabaseName < backup   //safely restores the backup file as a file/table in the database
