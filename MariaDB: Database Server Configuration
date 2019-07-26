@@ -50,3 +50,6 @@ MariaDB is a Database Management System which is 2x faster and stores more amoun
   [data1]> select * from table1;
   [data1]> exit
   
+•Taking Backup of the Database:
+  
+  
