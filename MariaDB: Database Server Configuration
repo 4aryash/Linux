@@ -29,5 +29,11 @@ MariaDB is a Database Management System which is 2x faster and stores more amoun
   MariaDb[data1] > create table table1(user varchar(20), id int(10));   //create a table with two coloumns.
   MariaDb[data1] > desc table1;     //displays the table
   
-
- 
+  #mysql -u user2 -p
+  #firewall-cmd --permanent --add service=mysql
+  #firewall-cmd --reload
+  #vim /etc/my.conf
+    skip networking = 0
+    :wq
+  #systemctl restart mariadb.service
+  #netstat -tulnp | grep sql
