@@ -37,3 +37,16 @@ MariaDB is a Database Management System which is 2x faster and stores more amoun
     :wq
   #systemctl restart mariadb.service
   #netstat -tulnp | grep sql
+  
+  In REMOTE PC,
+  #yum install mariadb
+  #mysql -h ip:add:re:ss -u root -p     //here h stands for hostname and full access is given to the remote user
+  
+  MariaDB> show databases;
+  MariaDB> use data1;
+  [data1]> show tables;
+  [data1]> insert into table1 value('user1','1');   //editing the table remotely
+  [data1]> insert into table1 value('xyz','69');
+  [data1]> select * from table1;
+  [data1]> exit
+  
