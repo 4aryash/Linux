@@ -14,3 +14,5 @@ mkdir /root/xyz{2..4}   //xyz2 xyz3 xyz4 directiories are created
 touch /root/xyz         //makes a xyz file in root folder
 touch /root/"xyz 1"     //filename has spacing, otherwise if " " is not mentioned, two seperate files xyz and 1 will be created.
 touch /root/xyz{2..4}   //xyz2 xyz3 xyz4 files are created
+
+echo "Any random text you want to enter into the file" > randomText.txt   //creates a file and enters the text
